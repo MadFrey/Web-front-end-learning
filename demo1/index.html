@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            /* line-height 用于设置行高 */
+            line-height: 25px;
+
+            /* text-indent 文本的第一行缩进 多少距离 */
+            text-indent: 2em;
+            /* 2em 缩进当前元素 2个文字大小的距离 */
+            font-family: '微软雅黑';
+            font-size: 12px;
+            color: aqua;
+        }
+
+        .red {
+            color: aqua;
+        }
+
+        .font {
+            font-size: 35px;
+        }
+
+        .bold {
+            text-align: center;
+            font-weight: bold;
+            /* italic 浏览器显示斜体的字体样式 */
+            font-style: italic;
+        }
+
+        /* 后代选择器 可以将ol里的小li选出来改为pink */
+        ol li {
+            color: pink;
+        }
+
+        ol li a {
+            color: peru;
+        }
+
+        /* 子元素选择器 */
+        .nav>a {
+            color: blue;
+        }
+
+        /* 并集选择器 各选择器通过,连接而成 */
+        div,
+        p,
+        .pig li {
+            color: aqua;
+        }
+
+        /* 链接伪类选择器  注意顺序不能改*/
+
+        /* a:link 把没有点击过的链接选出来 */
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+
+        a:visited {
+            color: aqua;
+        }
+
+        /* 选择鼠标经过的哪个链接*/
+        a:hover {
+            color: skyblue;
+        }
+
+        /* 鼠标按下但还没有弹起的那个链接 */
+        a.active {
+            color: aquamarine;
+        }
+
+        /* 把获得光标的input表单元素选取出来 */
+        input:focus {
+            background-color: aqua;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>hello</h1>
+    <a href="#">fenghousedhuiyi</a>
+    <div>hello world!</div>
+    <p> div span： 是没有语义的 <br> 但却是我们网页布局主要的2个盒子
+        先看单词含义：</p>
+
+    <p>div 就是 division 的缩写 分割， <ins>分区的意思</ins> <em>span 跨度</em> ，跨距；范围
+        <del>他们两个</del> 都是在 <strong>页面中</strong> 非常重要的两个元素；他们两个都是盒子，用来装我们网页元素的， 只不过他们有区别，现在我们主要记住使用方法和特点就好了
+    </p>
+    <img src="" alt="">
+    <a href="https://www.qq.com" target="_self">腾讯</a>
+    <table align="center" border="1">
+        <thead>
+            <!-- 行标签    -->
+            <tr>
+                <!-- 单元格标签 -->
+                <td>
+                    单元格1
+                </td>
+                <td>
+                    单元格2
+                </td>
+                <td>
+                    单元格3
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- 单元格标签 -->
+                <td>
+                    单元格1
+                </td>
+                <!-- 跨列合并 rowspan -->
+                <td colspan="2">
+                    单元格2
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <!-- 列表 -->
+    <ul>
+        <li>
+            vrains
+        </li>
+        <li>
+            arc
+        </li>
+    </ul>
+    <!-- 有序列表 -->
+    <ol>
+        <li class="red font">
+            llll 111
+        </li>
+        <li>
+            jjjj 2
+        </li>
+        <li>
+            lllk 1000
+        </li>
+    </ol>
+    <!-- 自定义列表 -->
+    <dl>
+        <dt>
+            联系我们
+        </dt>
+        <dd class="bold">
+            邮箱
+        </dd>
+        <dd>
+            公众号
+        </dd>
+    </dl>
+    <!-- 表单 -->
+    <form action="demo.php" method="post" name="name1">
+        <!-- label标签用于绑定表单元素 点击标签就可以转到对应的表单元素三 -->
+        <!-- text 文本框 用户可以往里面输入任何文字 -->
+        <label for="text">用户名</label> <input type="text" id="text" name="username" value="请输入用户名" maxlength="11"> <br>
+
+        密码 <input type="password">
+        <!-- radio 单选按钮 可以实现多选一 --> <br>
+        <!-- 单选按钮必须有相同的name 才可以实现多选一 -->
+        性别: 男 <input type="radio" name="sex" value="男" checked="checked"> 女 <input type="radio" name="sex" value="女">
+        <br>
+
+        <!-- checkbox 复选框 -->
+        吃饭 <input type="checkbox" name="hobby" checked> 睡觉 <input type="checkbox" name="hobby"> 打豆豆<input
+            type="checkbox" name="hobby">
+        <!-- 单选框和复选框都要求要有相同的name值 -->
+        <!-- checked 单选和复选框设置该属性后 当页面打开的时候就可以默认选中这个按钮      -->
+        <br>
+        <input type="submit" value="免费注册">
+        <!-- reset 还原表单元素的初始默认状态 -->
+        <input type="reset" value="重新设置">
+
+        <input type="button" value="获取短信验证码">
+
+        <input type="file" name="" id="">
+
+        <br>
+        <!-- 下拉表单 -->
+        <select name="" id="">
+            <option value="">重庆</option>
+            <option value="">山东</option>
+            <option value="">河南</option>
+            <!-- selected 与checked类似 -->
+            <option value="" selected>浙江</option>
+        </select>
+        <br>
+        <!-- 文本域标签 -->
+        <textarea name="" id="" cols="30" rows="10">请输入留言</textarea>
+        <ol>
+            <li>我是的的的</li>
+            <li>我是的的的</li>
+            <li>我是的的的</li>
+            <li><a href="#">我是的的的</a></li>
+        </ol>
+
+        <ul>
+            <li>我是的的的</li>
+            <li>我是的的的</li>
+            <li>我是的的的</li>
+            <li>我是的的的</li>
+        </ul>
+        <div class="nav">
+            <a href="#">qingerzi</a>
+            <p>
+                <a href="#">sunzi</a>
+            </p>
+        </div>
+
+
+
+
+    </form>
+</body>
+
+</html>
